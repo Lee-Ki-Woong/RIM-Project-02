@@ -1,0 +1,72 @@
+[
+  {
+    "Id": "Eyes_Nahida",
+    "SkinCategory": "Eyes",
+    "SkinName": "나히다 눈",
+    "SkinDescription": "원신의 캐릭터 나히다의 눈동자이다.",
+    "SkinIconAddress": "SkinIcon/Eyes/Nahida"
+  },
+  {
+    "Id": "Eyes_Furina",
+    "SkinCategory": "Eyes",
+    "SkinName": "푸리나 눈",
+    "SkinDescription": "원신의 캐릭터 푸리나의 눈동자이다.",
+    "SkinIconAddress": "SkinIcon/Eyes/Furina"
+  },
+  {
+    "Id": "Eyes_Black",
+    "SkinCategory": "Eyes",
+    "SkinName": "검은색 눈",
+    "SkinDescription": "검은색 눈동자이다.",
+    "SkinIconAddress": "SkinIcon/Eyes/Black"
+  },
+  {
+    "Id": "Eyes_Blue",
+    "SkinCategory": "Eyes",
+    "SkinName": "파란색 눈",
+    "SkinDescription": "파란색 눈동자이다.",
+    "SkinIconAddress": "SkinIcon/Eyes/Blue"
+  },
+  {
+    "Id": "Eyes_Brown",
+    "SkinCategory": "Eyes",
+    "SkinName": "갈색 눈",
+    "SkinDescription": "갈색 눈동자이다.",
+    "SkinIconAddress": "SkinIcon/Eyes/Brown"
+  },
+  {
+    "Id": "Eyes_Emerald",
+    "SkinCategory": "Eyes",
+    "SkinName": "에메랄드색 눈",
+    "SkinDescription": "에메랄드색 눈동자이다.",
+    "SkinIconAddress": "SkinIcon/Eyes/Emerald"
+  },
+  {
+    "Id": "Eyes_OddEyes",
+    "SkinCategory": "Eyes",
+    "SkinName": "오드아이",
+    "SkinDescription": "양쪽 색이 다른 눈동자이다.",
+    "SkinIconAddress": "SkinIcon/Eyes/OddEyes"
+  },
+  {
+    "Id": "Eyes_Purple",
+    "SkinCategory": "Eyes",
+    "SkinName": "보라색 눈",
+    "SkinDescription": "보라색 눈동자이다.",
+    "SkinIconAddress": "SkinIcon/Eyes/Purple"
+  },
+  {
+    "Id": "Eyes_Red",
+    "SkinCategory": "Eyes",
+    "SkinName": "붉은색 눈",
+    "SkinDescription": "붉은색 눈동자이다.",
+    "SkinIconAddress": "SkinIcon/Eyes/Red"
+  },
+  {
+    "Id": "Eyes_Yellow",
+    "SkinCategory": "Eyes",
+    "SkinName": "노란색 눈",
+    "SkinDescription": "노란색 눈동자이다.",
+    "SkinIconAddress": "SkinIcon/Eyes/Yellow"
+  }
+]

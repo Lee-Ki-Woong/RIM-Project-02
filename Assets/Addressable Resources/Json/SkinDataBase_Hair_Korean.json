@@ -1,0 +1,184 @@
+[
+  {
+    "Id": "Hair_Nahida_White",
+    "SkinCategory": "Hair",
+    "SkinName": "나히다 헤어",
+    "SkinDescription": "원신의 캐릭터 나히다의 헤어이다.",
+    "SkinIconAddress": "SkinIcon/Hair/Nahida/White"
+  },
+  {
+    "Id": "Hair_Furina_White",
+    "SkinCategory": "Hair",
+    "SkinName": "푸리나 헤어",
+    "SkinDescription": "원신의 캐릭터 푸리나의 헤어이다.",
+    "SkinIconAddress": "SkinIcon/Hair/Furina/White"
+  },
+  {
+    "Id": "Hair_DoubleBun_Beige",
+    "SkinCategory": "Hair",
+    "SkinName": "만두 머리(베이지)",
+    "SkinDescription": "베이지색 만두 머리이다.",
+    "SkinIconAddress": "SkinIcon/Hair/DoubleBun/Beige"
+  },
+  {
+    "Id": "Hair_DoubleBun_Black",
+    "SkinCategory": "Hair",
+    "SkinName": "만두 머리(검정)",
+    "SkinDescription": "검정색 만두 머리이다.",
+    "SkinIconAddress": "SkinIcon/Hair/DoubleBun/Black"
+  },
+  {
+    "Id": "Hair_DoubleBun_Blue",
+    "SkinCategory": "Hair",
+    "SkinName": "만두 머리(파랑)",
+    "SkinDescription": "파랑색 만두 머리이다.",
+    "SkinIconAddress": "SkinIcon/Hair/DoubleBun/Blue"
+  },
+  {
+    "Id": "Hair_DoubleBun_Gold",
+    "SkinCategory": "Hair",
+    "SkinName": "만두 머리(금발)",
+    "SkinDescription": "금발 만두 머리이다.",
+    "SkinIconAddress": "SkinIcon/Hair/DoubleBun/Gold"
+  },
+  {
+    "Id": "Hair_DoubleBun_Pink",
+    "SkinCategory": "Hair",
+    "SkinName": "만두 머리(분홍)",
+    "SkinDescription": "분홍색 만두 머리이다.",
+    "SkinIconAddress": "SkinIcon/Hair/DoubleBun/Pink"
+  },
+  {
+    "Id": "Hair_DoubleBun_Red",
+    "SkinCategory": "Hair",
+    "SkinName": "만두 머리(빨강)",
+    "SkinDescription": "빨간색 만두 머리이다.",
+    "SkinIconAddress": "SkinIcon/Hair/DoubleBun/Red"
+  },
+  {
+    "Id": "Hair_LongStraight_Beige",
+    "SkinCategory": "Hair",
+    "SkinName": "긴 생머리(베이지)",
+    "SkinDescription": "베이지색 긴 생머리이다.",
+    "SkinIconAddress": "SkinIcon/Hair/LongStraight/Beige"
+  },
+  {
+    "Id": "Hair_LongStraight_Black",
+    "SkinCategory": "Hair",
+    "SkinName": "긴 생머리(검정)",
+    "SkinDescription": "검정색 긴 생머리이다.",
+    "SkinIconAddress": "SkinIcon/Hair/LongStraight/Black"
+  },
+  {
+    "Id": "Hair_LongStraight_Blue",
+    "SkinCategory": "Hair",
+    "SkinName": "긴 생머리(파랑)",
+    "SkinDescription": "파랑색 긴 생머리이다.",
+    "SkinIconAddress": "SkinIcon/Hair/LongStraight/Blue"
+  },
+  {
+    "Id": "Hair_LongStraight_Gold",
+    "SkinCategory": "Hair",
+    "SkinName": "긴 생머리(금발)",
+    "SkinDescription": "금발 긴 생머리이다.",
+    "SkinIconAddress": "SkinIcon/Hair/LongStraight/Gold"
+  },
+  {
+    "Id": "Hair_LongStraight_Pink",
+    "SkinCategory": "Hair",
+    "SkinName": "긴 생머리(분홍)",
+    "SkinDescription": "분홍색 긴 생머리이다.",
+    "SkinIconAddress": "SkinIcon/Hair/LongStraight/Pink"
+  },
+  {
+    "Id": "Hair_LongStraight_Red",
+    "SkinCategory": "Hair",
+    "SkinName": "긴 생머리(빨강)",
+    "SkinDescription": "빨간색 긴 생머리이다.",
+    "SkinIconAddress": "SkinIcon/Hair/LongStraight/Red"
+  },
+  {
+    "Id": "Hair_MediumBob_Beige",
+    "SkinCategory": "Hair",
+    "SkinName": "단발 머리(베이지)",
+    "SkinDescription": "베이지색 단발 머리이다.",
+    "SkinIconAddress": "SkinIcon/Hair/MediumBob/Beige"
+  },
+  {
+    "Id": "Hair_MediumBob_Black",
+    "SkinCategory": "Hair",
+    "SkinName": "단발 머리(검정)",
+    "SkinDescription": "검정색 단발 머리이다.",
+    "SkinIconAddress": "SkinIcon/Hair/MediumBob/Black"
+  },
+  {
+    "Id": "Hair_MediumBob_Blue",
+    "SkinCategory": "Hair",
+    "SkinName": "단발 머리(파랑)",
+    "SkinDescription": "파랑색 단발 머리이다.",
+    "SkinIconAddress": "SkinIcon/Hair/MediumBob/Blue"
+  },
+  {
+    "Id": "Hair_MediumBob_Gold",
+    "SkinCategory": "Hair",
+    "SkinName": "단발 머리(금발)",
+    "SkinDescription": "금발 단발 머리이다.",
+    "SkinIconAddress": "SkinIcon/Hair/MediumBob/Gold"
+  },
+  {
+    "Id": "Hair_MediumBob_Pink",
+    "SkinCategory": "Hair",
+    "SkinName": "단발 머리(분홍)",
+    "SkinDescription": "분홍색 단발 머리이다.",
+    "SkinIconAddress": "SkinIcon/Hair/MediumBob/Pink"
+  },
+  {
+    "Id": "Hair_MediumBob_Red",
+    "SkinCategory": "Hair",
+    "SkinName": "단발 머리(빨강)",
+    "SkinDescription": "빨간색 단발 머리이다.",
+    "SkinIconAddress": "SkinIcon/Hair/MediumBob/Red"
+  },
+  {
+    "Id": "Hair_ShaggyLong_Beige",
+    "SkinCategory": "Hair",
+    "SkinName": "롱 샤기컷(베이지)",
+    "SkinDescription": "베이지색 롱 샤기컷이다.",
+    "SkinIconAddress": "SkinIcon/Hair/ShaggyLong/Beige"
+  },
+  {
+    "Id": "Hair_ShaggyLong_Black",
+    "SkinCategory": "Hair",
+    "SkinName": "롱 샤기컷(검정)",
+    "SkinDescription": "검정색 롱 샤기컷이다.",
+    "SkinIconAddress": "SkinIcon/Hair/ShaggyLong/Black"
+  },
+  {
+    "Id": "Hair_ShaggyLong_Blue",
+    "SkinCategory": "Hair",
+    "SkinName": "롱 샤기컷(파랑)",
+    "SkinDescription": "파랑색 롱 샤기컷이다.",
+    "SkinIconAddress": "SkinIcon/Hair/ShaggyLong/Blue"
+  },
+  {
+    "Id": "Hair_ShaggyLong_Gold",
+    "SkinCategory": "Hair",
+    "SkinName": "롱 샤기컷(금발)",
+    "SkinDescription": "금발 롱 샤기컷이다.",
+    "SkinIconAddress": "SkinIcon/Hair/ShaggyLong/Gold"
+  },
+  {
+    "Id": "Hair_ShaggyLong_Pink",
+    "SkinCategory": "Hair",
+    "SkinName": "롱 샤기컷(분홍)",
+    "SkinDescription": "분홍색 롱 샤기컷이다.",
+    "SkinIconAddress": "SkinIcon/Hair/ShaggyLong/Pink"
+  },
+  {
+    "Id": "Hair_ShaggyLong_Red",
+    "SkinCategory": "Hair",
+    "SkinName": "롱 샤기컷(빨강)",
+    "SkinDescription": "빨간색 롱 샤기컷이다.",
+    "SkinIconAddress": "SkinIcon/Hair/ShaggyLong/Red"
+  }
+]

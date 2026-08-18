@@ -1,0 +1,16 @@
+[
+  {
+    "Id": "Cloth_Nahida",
+    "SkinCategory": "Cloth",
+    "SkinName": "나히다 옷",
+    "SkinDescription": "원신의 캐릭터 나히다의 옷이다.",
+    "SkinIconAddress": "SkinIcon/Cloth/Nahida"
+  },
+  {
+    "Id": "Cloth_Furina",
+    "SkinCategory": "Cloth",
+    "SkinName": "푸리나 옷",
+    "SkinDescription": "원신의 캐릭터 푸리나의 옷이다.",
+    "SkinIconAddress": "SkinIcon/Cloth/Furina"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "Id": "Body_Fair",
+    "SkinCategory": "Body",
+    "SkinName": "순백 피부",
+    "SkinDescription": "순백색 피부이다.",
+    "SkinIconAddress": "SkinIcon/Body/Fair"
+  },
+  {
+    "Id": "Body_Light",
+    "SkinCategory": "Body",
+    "SkinName": "밝은 피부",
+    "SkinDescription": "밝은 피부이다.",
+    "SkinIconAddress": "SkinIcon/Body/Light"
+  }
+]

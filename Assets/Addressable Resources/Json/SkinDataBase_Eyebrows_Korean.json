@@ -1,0 +1,37 @@
+[
+  {
+    "Id": "Eyebrows_Neutral",
+    "SkinCategory": "Eyebrows",
+    "SkinName": "기본 눈썹",
+    "SkinDescription": "평범한 눈썹이다.",
+    "SkinIconAddress": "SkinIcon/EyeBrows/Neutral"
+  },
+  {
+    "Id": "Eyebrows_Long",
+    "SkinCategory": "Eyebrows",
+    "SkinName": "긴 눈썹",
+    "SkinDescription": "긴 눈썹이다.",
+    "SkinIconAddress": "SkinIcon/EyeBrows/Long"
+  },
+  {
+    "Id": "Eyebrows_Medium",
+    "SkinCategory": "Eyebrows",
+    "SkinName": "중간 눈썹",
+    "SkinDescription": "중간 사이즈 눈썹이다.",
+    "SkinIconAddress": "SkinIcon/EyeBrows/Medium"
+  },
+  {
+    "Id": "Eyebrows_Short",
+    "SkinCategory": "Eyebrows",
+    "SkinName": "짧은 눈썹",
+    "SkinDescription": "짧은 눈썹이다.",
+    "SkinIconAddress": "SkinIcon/EyeBrows/Short"
+  },
+  {
+    "Id": "Eyebrows_Blank",
+    "SkinCategory": "Eyebrows",
+    "SkinName": "처진 눈썹",
+    "SkinDescription": "처진 눈썹이다.",
+    "SkinIconAddress": "SkinIcon/EyeBrows/Blank"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "Id": "Mouth_Empty",
+    "SkinCategory": "Mouth",
+    "SkinName": "없음",
+    "SkinDescription": null,
+    "SkinIconAddress": "SkinIcon/Mouth/Empty"
+  },
+  {
+    "Id": "Mouth_Smile",
+    "SkinCategory": "Mouth",
+    "SkinName": "웃는 입",
+    "SkinDescription": "웃는 입이다.",
+    "SkinIconAddress": "SkinIcon/Mouth/Smile"
+  }
+]
