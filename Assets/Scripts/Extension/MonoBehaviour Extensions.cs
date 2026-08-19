@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public static class MonoBehaviourExtension
+public static class MonoBehaviourExtensions
 {
     public static void ActiveTrue(this MonoBehaviour monoBehaviour)
     {

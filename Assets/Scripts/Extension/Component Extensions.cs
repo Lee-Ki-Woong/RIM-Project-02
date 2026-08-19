@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public static class ComponentExtension
+public static class ComponentExtensions
 {
     public static void Log(this Component component, string text)
     {
