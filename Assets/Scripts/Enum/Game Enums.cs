@@ -31,3 +31,12 @@ public enum PasswordValidationResult
     TooLong,
     InvalidFormat,
 }
+
+public enum AccountResult
+{
+    Success,
+    InvalidId,
+    InvalidPassword,
+    AlreadyExists,
+    Failed,
+}
