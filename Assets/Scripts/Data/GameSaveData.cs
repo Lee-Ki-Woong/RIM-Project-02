@@ -2,6 +2,17 @@
 using System.Collections.Generic;
 
 [Serializable]
+public class GameSettingData
+{
+    public string Language;
+    public int ScreenWidth;
+    public int ScreenHeight;
+    public bool IsFullScreen;
+    public float MasterVolume;
+}
+
+
+[Serializable]
 public class AccountData
 {
     public string Id;
@@ -12,7 +23,6 @@ public class AccountData
 [Serializable]
 public class GameSaveData
 {
-    public string Language;
     public PlayerData PlayerData = new();
 }
 
