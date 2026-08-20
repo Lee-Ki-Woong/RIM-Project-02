@@ -44,6 +44,8 @@ public class NetworkManager : BaseManager<NetworkManager>
         account.PasswordHash = HashPassword(password);
         account.GameSaveData = CreateNewSaveData();
 
+        Log($"새로운 계정을 생성하였습니다!! 계정 Id : {account.Id}");
+
         SaveAccount(account);
 
         return AccountResult.Success;
@@ -75,7 +77,7 @@ public class NetworkManager : BaseManager<NetworkManager>
             return AccountResult.Failed;
         }
 
-        Log($"로드 완료!! 아이디 명 : {loaded.Id}");
+        Log($"계정 로드 완료!! 계정 Id : {loaded.Id}");
         account = loaded;
 
         return AccountResult.Success;
@@ -103,7 +105,7 @@ public class NetworkManager : BaseManager<NetworkManager>
         string json = JsonUtility.ToJson(accountData, true);
         File.WriteAllText(GetAccountPath(accountData.Id), json);
 
-        Log($"저장 완료!! 아이디 명 : {accountData.Id}");
+        Log($"계정 저장 완료!! 아이디 명 : {accountData.Id}");
     }
 
     private AccountData LoadAccount(string id)
@@ -123,7 +125,7 @@ public class NetworkManager : BaseManager<NetworkManager>
 
             if(accountData == null)
             {
-                LogError($"세이브 데이터의 파싱에 실패하였습니다!! 아이디 : {id}");
+                LogError($"계정 세이브 데이터의 파싱에 실패하였습니다!! 아이디 : {id}");
             }
 
             return accountData;
@@ -139,7 +141,6 @@ public class NetworkManager : BaseManager<NetworkManager>
     private GameSaveData CreateNewSaveData()
     {
         GameSaveData saveData = new();
-        saveData.Language = LanguageUtil.GetLanguage(Language.Korean);
 
         saveData.PlayerData.OwnedSkins.Add("Hair_MediumBob_Beige");
         saveData.PlayerData.OwnedSkins.Add("Eyes_Black");

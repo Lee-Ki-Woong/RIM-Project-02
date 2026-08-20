@@ -27,7 +27,7 @@ public class UIDataManager : BaseManager<UIDataManager>
 
     private Dictionary<string, T> LoadData<T>(string path) where T : UIDataBase
     {
-        string language = LanguageUtil.GetLanguage(GameManager.Instance.GameCurrentLanguage);
+        string language = LanguageUtil.GetLanguage(GameSettingManager.Instance.GameCurrentLanguage);
         string resourcePath = $"Json/{path}_{language}";
         TextAsset textAsset = ResourceManager.Instance.LoadAssetSync<TextAsset>(resourcePath);
 
