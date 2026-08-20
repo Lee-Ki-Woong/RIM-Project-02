@@ -16,4 +16,14 @@ public static class ComponentExtensions
     {
         Debug.LogError($"{component.gameObject.name}.{component.GetType().Name} : {text}", component);
     }
+
+    public static void ActiveTrue(this Component component)
+    {
+        component.gameObject.SetActive(true);
+    }
+
+    public static void ActiveFalse(this Component component)
+    {
+        component.gameObject.SetActive(false);
+    }
 }
