@@ -91,6 +91,9 @@ public class GameSettingManager : BaseManager<GameSettingManager>
         setting.IsFullScreen = true;
         setting.MasterVolume = 1f;
 
+        setting.IsRememberId = false;
+        setting.RememberedId = string.Empty;
+
         return setting;
     }
 
@@ -123,6 +126,14 @@ public class GameSettingManager : BaseManager<GameSettingManager>
         UIDataManager.Instance.ReloadAllData();
 
         OnLanguageChanged?.Invoke();
+    }
+
+    public void SetRememberId(bool isRemember, string id)
+    {
+        GameCurrentSettingData.IsRememberId = isRemember;
+        GameCurrentSettingData.RememberedId = id;
+
+        Save();
     }
 
     private void ApplyGameSettingData()
