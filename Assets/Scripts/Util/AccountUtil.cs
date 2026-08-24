@@ -1,4 +1,8 @@
-﻿public static class AccountUtil
+﻿using System;
+using System.Security.Cryptography;
+using System.Text;
+
+public static class AccountUtil
 {
     public const int IdMinLength = 4;
     public const int IdMaxLength = 16;
@@ -111,5 +115,17 @@
         }
 
         return false;
+    }
+
+    public static string HashPassword(string password)
+    {
+        using SHA256 sha256 = SHA256.Create();
+
+        byte[] bytes = Encoding.UTF8.GetBytes(password);
+        byte[] hash = sha256.ComputeHash(bytes);
+
+        string hashPassword = Convert.ToBase64String(hash);
+
+        return hashPassword;
     }
 }
