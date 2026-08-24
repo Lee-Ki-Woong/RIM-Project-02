@@ -1,141 +1,113 @@
-﻿using System;
-using System.IO;
-using System.Security.Cryptography;
-using System.Text;
-using UnityEngine;
-
 public class NetworkManager : BaseManager<NetworkManager>
 {
-    private string GetAccountDirectory()
-    {
-        string path = Path.Combine(Application.persistentDataPath, "Accounts");
+    private AccountFileService _accountFileService;
+    private AccountIndexService _accountIndexService;
 
-        return path;
+    protected override void InitAction()
+    {
+        _accountFileService = new();
+        _accountIndexService = new(_accountFileService);
     }
 
-    private string GetAccountPath(string id)
-    {
-        string path = Path.Combine(GetAccountDirectory(), $"{id}.json");
-
-        return path;
-    }
-
-    public AccountResult TryCreateAccount(string id, string password, out AccountData account)
+    public CreateAccountResult TryCreateAccount(string id, string password, string passwordConfirm, out AccountData account)
     {
         account = null;
 
-        if (AccountUtil.ValidateId(id) != IdValidationResult.Valid)
+        string loweredId = id.ToLowerInvariant();
+
+        if (AccountUtil.ValidateId(loweredId) != IdValidationResult.Valid)
         {
-            return AccountResult.InvalidId;
+            return CreateAccountResult.InvalidId;
         }
 
         if (AccountUtil.ValidatePassword(password) != PasswordValidationResult.Valid)
         {
-            return AccountResult.InvalidPassword;
+            return CreateAccountResult.InvalidPassword;
         }
 
-        if (File.Exists(GetAccountPath(id)))
+        if (password != passwordConfirm)
         {
-            return AccountResult.AlreadyExists;
+            return CreateAccountResult.PasswordMismatch;
+        }
+
+        if (_accountIndexService.FindPlayerUid(loweredId) != null)
+        {
+            return CreateAccountResult.AlreadyExists;
         }
 
         account = new AccountData();
-        account.Id = id;
-        account.PasswordHash = HashPassword(password);
+        account.Id = loweredId;
+        account.PlayerUID = _accountIndexService.IssuePlayerUid();
+        account.PasswordHash = AccountUtil.HashPassword(password);
         account.GameSaveData = CreateNewSaveData();
 
-        Log($"새로운 계정을 생성하였습니다!! 계정 Id : {account.Id}");
+        // 계정 파일을 먼저 쓰고 색인을 갱신한다.
+        // 순서가 반대면 색인에는 있는데 파일이 없어 로그인이 실패한다.
+        _accountFileService.Save(account);
+        _accountIndexService.Register(account.Id, account.PlayerUID);
 
-        SaveAccount(account);
+        Log($"새로운 계정을 생성하였습니다!! 계정 Id : {account.Id}, PlayerUID : {account.PlayerUID}");
 
-        return AccountResult.Success;
+        return CreateAccountResult.Success;
     }
 
-    public AccountResult TryLogin(string id, string password, out AccountData account)
+    public LoginResult TryLogin(string id, string password, out AccountData account)
     {
         account = null;
 
-        if (AccountUtil.ValidateId(id) != IdValidationResult.Valid)
+        string loweredId = id.ToLowerInvariant();
+
+        if (AccountUtil.ValidateId(loweredId) != IdValidationResult.Valid)
         {
-            return AccountResult.Failed;
+            return LoginResult.Failed;
         }
 
         if (AccountUtil.ValidatePassword(password) != PasswordValidationResult.Valid)
         {
-            return AccountResult.Failed;
+            return LoginResult.Failed;
         }
 
-        AccountData loaded = LoadAccount(id);
+        string playerUID = _accountIndexService.FindPlayerUid(loweredId);
+
+        if (string.IsNullOrEmpty(playerUID))
+        {
+            return LoginResult.Failed;
+        }
+
+        AccountData loaded = _accountFileService.Load(playerUID);
 
         if (loaded == null)
         {
-            return AccountResult.Failed;
+            return LoginResult.Failed;
         }
 
-        if (loaded.PasswordHash != HashPassword(password))
+        if (loaded.PasswordHash != AccountUtil.HashPassword(password))
         {
-            return AccountResult.Failed;
+            return LoginResult.Failed;
         }
 
-        Log($"계정 로드 완료!! 계정 Id : {loaded.Id}");
+        Log($"계정 로드 완료!! 계정 Id : {loaded.Id}, PlayerUID : {loaded.PlayerUID}");
+
         account = loaded;
 
-        return AccountResult.Success;
+        return LoginResult.Success;
     }
 
     public void RequestSaveData(AccountData accountData)
     {
-        if(accountData == null)
+        if (accountData == null)
         {
             return;
         }
 
-        if(AccountUtil.ValidateId(accountData.Id) != IdValidationResult.Valid)
+        if (string.IsNullOrEmpty(accountData.PlayerUID))
         {
+            LogError("PlayerUID가 없는 계정은 저장할 수 없습니다!!");
+
             return;
         }
 
-        SaveAccount(accountData);
-    }
-
-    private void SaveAccount(AccountData accountData)
-    {
-        Directory.CreateDirectory(GetAccountDirectory());
-
-        string json = JsonUtility.ToJson(accountData, true);
-        File.WriteAllText(GetAccountPath(accountData.Id), json);
-
-        Log($"계정 저장 완료!! 아이디 명 : {accountData.Id}");
-    }
-
-    private AccountData LoadAccount(string id)
-    {
-        string path = GetAccountPath(id);
-        
-        if(File.Exists(path) == false)
-        {
-            return null;
-        }
-
-        try
-        {
-            string json = File.ReadAllText(path);
-
-            AccountData accountData = JsonUtility.FromJson<AccountData>(json);
-
-            if(accountData == null)
-            {
-                LogError($"계정 세이브 데이터의 파싱에 실패하였습니다!! 아이디 : {id}");
-            }
-
-            return accountData;
-        }
-        catch(Exception ex)
-        {
-            Debug.LogException(ex);
-
-            return null;
-        }
+        _accountFileService.Save(accountData);
     }
 
     private GameSaveData CreateNewSaveData()
@@ -157,16 +129,5 @@ public class NetworkManager : BaseManager<NetworkManager>
         saveData.PlayerData.EquippedSkins.Add(new EquippedSkin(SkinCategory.Body.ToString(), "Body_Light"));
 
         return saveData;
-    }
-
-    private string HashPassword(string password)
-    {
-        using SHA256 sha256 = SHA256.Create();
-        byte[] bytes = Encoding.UTF8.GetBytes(password);
-        byte[] hash = sha256.ComputeHash(bytes);
-
-        string hashPassword = Convert.ToBase64String(hash);
-
-        return hashPassword;
     }
 }

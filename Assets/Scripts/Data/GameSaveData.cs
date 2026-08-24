@@ -9,6 +9,9 @@ public class GameSettingData
     public int ScreenHeight;
     public bool IsFullScreen;
     public float MasterVolume;
+
+    public bool IsRememberId;
+    public string RememberedId;
 }
 
 
@@ -17,6 +20,7 @@ public class AccountData
 {
     public string Id;
     public string PasswordHash;
+    public string PlayerUID;
     public GameSaveData GameSaveData = new();
 }
 
