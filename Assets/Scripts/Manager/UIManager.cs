@@ -3,9 +3,13 @@ using UnityEngine;
 
 public partial class UIManager : BaseMonoManager<UIManager>
 {
+    [SerializeField] private Canvas Canvas_Background;
     [SerializeField] private Canvas Canvas_Main;
-    [SerializeField] private Canvas Canvas_Popup;
     [SerializeField] private Canvas Canvas_Content;
+    [SerializeField] private Canvas Canvas_Popup_First;
+    [SerializeField] private Canvas Canvas_Popup_Second;
+    [SerializeField] private Canvas Canvas_Popup_Third;
+    [SerializeField] private Canvas Canvas_Loading;
 
     [SerializeField] private UICatalog SO_UICatalog;
 
@@ -86,7 +90,7 @@ public partial class UIManager : BaseMonoManager<UIManager>
 
         if (uiEntry == null)
         {
-            this.LogError($"{nameof(uiType)}에 대한 UIEntry가 없습니다!!");
+            this.LogError($"[{uiType}]에 대한 UIEntry가 없습니다!!");
             return null;
         }
 
@@ -110,7 +114,7 @@ public partial class UIManager : BaseMonoManager<UIManager>
 
         if (view == null)
         {
-            this.LogError($"{nameof(prefab)}에 {typeof(IUIView)} 컴포넌트가 없습니다!!");
+            this.LogError($"[{uiEntry.PrefabAddress}]에 {typeof(IUIView)} 컴포넌트가 없습니다!!");
             Destroy(uiGameObject);
 
             return null;
@@ -147,17 +151,33 @@ public partial class UIManager : BaseMonoManager<UIManager>
     {
         switch (canvasType)
         {
+            case CanvasType.Background:
+                {
+                    return Canvas_Background;
+                }
             case CanvasType.Main:
                 {
                     return Canvas_Main;
                 }
-            case CanvasType.Popup:
-                {
-                    return Canvas_Popup;
-                }
             case CanvasType.Content:
                 {
                     return Canvas_Content;
+                }
+            case CanvasType.Popup_First:
+                {
+                    return Canvas_Popup_First;
+                }
+            case CanvasType.Popup_Second:
+                {
+                    return Canvas_Popup_Second;
+                }
+            case CanvasType.Popup_Third:
+                {
+                    return Canvas_Popup_Third;
+                }
+            case CanvasType.Loading:
+                {
+                    return Canvas_Loading;
                 }
             default:
                 {
