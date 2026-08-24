@@ -32,11 +32,17 @@ public enum PasswordValidationResult
     InvalidFormat,
 }
 
-public enum AccountResult
+public enum LoginResult
+{
+    Success,
+    Failed,
+}
+
+public enum CreateAccountResult
 {
     Success,
     InvalidId,
     InvalidPassword,
+    PasswordMismatch,
     AlreadyExists,
-    Failed,
 }
