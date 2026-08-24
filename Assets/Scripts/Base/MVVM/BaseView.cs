@@ -35,6 +35,7 @@ public abstract class BaseView<T> : BaseView where T : BaseViewModel
         if (_viewModel != null)
         {
             _viewModel.OnPropertyChangedForView -= OnPropertyChanged;
+            _viewModel.Dispose();
         }
 
         _viewModel = viewModel;
@@ -49,6 +50,7 @@ public abstract class BaseView<T> : BaseView where T : BaseViewModel
         if (_viewModel != null)
         {
             _viewModel.OnPropertyChangedForView -= OnPropertyChanged;
+            _viewModel.Dispose();
             _viewModel = null;
         }
     }

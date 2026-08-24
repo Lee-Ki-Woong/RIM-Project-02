@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 using System.ComponentModel;
 
 public abstract class BaseViewModel : IDisposable
@@ -33,5 +34,20 @@ public abstract class BaseViewModel<T> : BaseViewModel where T : BaseModel
     public override void Dispose()
     {
         _model.PropertyChanged -= OnPropertyChanged;
+    }
+
+    protected void Log(string text)
+    {
+        Debug.Log($"{this} : " + text);
+    }
+
+    protected void LogWarning(string text)
+    {
+        Debug.LogWarning($"{this} : " + text);
+    }
+
+    protected void LogError(string text)
+    {
+        Debug.LogError($"{this} : " + text);
     }
 }
