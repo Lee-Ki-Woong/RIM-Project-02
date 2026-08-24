@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-public class PlayerService
+public class PlayerService : BaseService
 {
     public PlayerModel Model { get; }
     public SkinService SkinService { get; }

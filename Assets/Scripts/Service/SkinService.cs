@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-public class SkinService
+public class SkinService : BaseService
 {
     private readonly PlayerModel _playerModel;
 
