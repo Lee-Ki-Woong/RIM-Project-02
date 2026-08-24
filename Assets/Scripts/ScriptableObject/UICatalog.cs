@@ -24,7 +24,12 @@ public class UICatalog : ScriptableObject
             CreateUIData();
         }
 
-        return _uiCatalogDictionary[uiType];
+        if (_uiCatalogDictionary.TryGetValue(uiType, out UIEntry uiEntry) == false)
+        {
+            return null;
+        }
+
+        return uiEntry;
     }
 
     private void CreateUIData()

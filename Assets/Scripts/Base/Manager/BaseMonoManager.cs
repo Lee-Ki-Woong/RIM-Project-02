@@ -10,12 +10,26 @@ public class BaseMonoManager<T> : MonoBehaviour where T : BaseMonoManager<T>
         AwakeAction();
     }
 
+    private void OnDestroy()
+    {
+        OnDestroyAction();
+
+        if(ReferenceEquals(Instance, this))
+        {
+            Instance = null;
+        }
+    }
+
     private void InitSingleTon()
     {
         if (Instance == null)
         {
             Instance = this as T;
-            DontDestroyOnLoad(gameObject);
+
+            if (transform.parent == null)
+            {
+                DontDestroyOnLoad(gameObject);
+            }
         }
         else
         {
@@ -26,5 +40,10 @@ public class BaseMonoManager<T> : MonoBehaviour where T : BaseMonoManager<T>
     protected virtual void AwakeAction()
     {
         // Awake에서 추가 작업이 필요할 경우 여기에 작성
+    }
+    
+    protected virtual void OnDestroyAction()
+    {
+        // OnDestroy에서 추가 작업이 필요할 경우 여기에 작성
     }
 }
