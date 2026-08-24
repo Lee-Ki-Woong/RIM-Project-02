@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class UIDataManager : BaseManager<UIDataManager>
 {
+    public Dictionary<string, LoginUIDataBase> LoginUIData { get; private set; }
+    public Dictionary<string, TitleButtonUIDataBase> TitleButtonUIData { get; private set; }
+
     protected override void InitAction()
     {
         LoadAllData();
@@ -16,7 +19,18 @@ public class UIDataManager : BaseManager<UIDataManager>
 
     private void LoadAllData()
     {
+        LoadLoginUIData();
+        LoadTitleButtonUIDataBase();
+    }
 
+    private void LoadLoginUIData()
+    {
+        LoginUIData = LoadData<LoginUIDataBase>("LoginUIDataBase");
+    }
+
+    private void LoadTitleButtonUIDataBase()
+    {
+        TitleButtonUIData = LoadData<TitleButtonUIDataBase>("TitleButtonUIDataBase");
     }
 
     [Serializable]
