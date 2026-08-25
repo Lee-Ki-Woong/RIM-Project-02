@@ -13,9 +13,16 @@ public partial class UIManager
         OpenUI<TitleButtonUI>(UIType.TitleButtonUI);
     }
 
-    public void OpenPlayerUID()
+    public void OpenPlayerUID(string playerUID)
     {
-        OpenUI<PlayerUID>(UIType.PlayerUID);
+        PlayerUIDUI view = OpenUI<PlayerUIDUI>(UIType.PlayerUID);
+
+        if (view == null)
+        {
+            return;
+        }
+
+        view.SetPlayerUID(playerUID);
     }
 
     public void OpenLoginUI()

@@ -24,6 +24,7 @@ public enum CanvasType
     Popup_First,
     Popup_Second,
     Popup_Third,
+    Overlay,
     Loading,
 }
 

@@ -9,6 +9,7 @@ public partial class UIManager : BaseMonoManager<UIManager>
     [SerializeField] private Canvas Canvas_Popup_First;
     [SerializeField] private Canvas Canvas_Popup_Second;
     [SerializeField] private Canvas Canvas_Popup_Third;
+    [SerializeField] private Canvas Canvas_Overlay;
     [SerializeField] private Canvas Canvas_Loading;
 
     [SerializeField] private UICatalog SO_UICatalog;
@@ -174,6 +175,10 @@ public partial class UIManager : BaseMonoManager<UIManager>
             case CanvasType.Popup_Third:
                 {
                     return Canvas_Popup_Third;
+                }
+            case CanvasType.Overlay:
+                {
+                    return Canvas_Overlay;
                 }
             case CanvasType.Loading:
                 {

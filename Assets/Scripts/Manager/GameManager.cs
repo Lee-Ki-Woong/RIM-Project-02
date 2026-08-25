@@ -31,7 +31,7 @@ public class GameManager : BaseMonoManager<GameManager>
 
         OnLoginSuccess?.Invoke();
 
-
+        UIManager.Instance.OpenPlayerUID(account.PlayerUID);
     }
 
     public void SaveAccount()
