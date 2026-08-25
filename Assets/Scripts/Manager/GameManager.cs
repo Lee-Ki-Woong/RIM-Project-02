@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class GameManager : BaseMonoManager<GameManager>
 {
@@ -6,6 +7,8 @@ public class GameManager : BaseMonoManager<GameManager>
 
     public AccountData GameCurrentAccountData { get; private set; }
     public PlayerService PlayerService { get; private set; }
+
+    public event Action OnLoginSuccess;
 
     protected override void AwakeAction()
     {
@@ -16,12 +19,19 @@ public class GameManager : BaseMonoManager<GameManager>
         UIDataManager.Create();
 
         Instantiate(Prefab_UIManager, this.transform);
+
+        UIManager.Instance.OpenTitleBackgroundUI();
+        UIManager.Instance.OpenTitleButtonUI();
     }
 
     public void SetAccount(AccountData account)
     {
         GameCurrentAccountData = account;
         PlayerService = new(account.GameSaveData.PlayerData);
+
+        OnLoginSuccess?.Invoke();
+
+
     }
 
     public void SaveAccount()
